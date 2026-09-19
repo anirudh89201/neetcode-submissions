@@ -18,7 +18,7 @@
                 steps {
                     bat '''
                         python -m venv venv
-                        . venv/bin/activate
+                        call venv\\Scripts\\activate.bat
                         pip install --upgrade pip
                         pip install -r requirements.txt
                         pip install flake8 black
@@ -30,7 +30,7 @@
                 steps {
                     dir('app') {
                         bat '''
-                            . venv/bin/activate
+                            call venv\\Scripts\\activate.bat
                             flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
                         '''
                     }
@@ -39,7 +39,7 @@
             stage('black'){
                 steps{
                     bat '''
-                    call venv/bin/activate.ps1
+                    call venv\\Scripts\\activate.bat
                     black app/*
                     '''
                 }
