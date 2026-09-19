@@ -39,7 +39,7 @@
             stage('black'){
                 steps{
                     bat '''
-                    source .venv/bin/activate
+                    call venv/bin/activate.ps1
                     black app/*
                     '''
                 }
