@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import uvicorn
 
-from Models import CustomerModel
+from app.Models import CustomerModel
 
 app = FastAPI()
 
