@@ -5,6 +5,9 @@ pipeline {
             steps {
                 sh 'python --version'
             }
+            steps {
+                sh 'python -c \'import pyodbc print(pyodbc.drivers())'\'
+            }
         }
     }
 }
