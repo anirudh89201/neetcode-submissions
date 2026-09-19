@@ -16,7 +16,7 @@
 
             stage('Install Dependencies') {
                 steps {
-                    sh '''
+                    bat '''
                         python -m venv venv
                         . venv/bin/activate
                         pip install --upgrade pip
@@ -29,7 +29,7 @@
             stage('Lint') {
                 steps {
                     dir('app') {
-                        sh '''
+                        bat '''
                             . venv/bin/activate
                             flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
                         '''
@@ -38,7 +38,7 @@
             }
             stage('black'){
                 steps{
-                    sh '''
+                    bat '''
                     source .venv/bin/activate
                     black app/*
                     '''
