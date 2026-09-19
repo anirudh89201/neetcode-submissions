@@ -1,8 +1,13 @@
     pipeline {
-        agent { dockerContainer { image 'python:3.12-slim' } }
-
+        agent any
+        
         stages {
-
+            stage('Debug') {
+                steps {
+                    bat 'docker --version'
+                    bat 'where docker'
+                }
+            }
             stage('Checkout') {
                 steps {
                     checkout scm
